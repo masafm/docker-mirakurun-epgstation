@@ -17,11 +17,8 @@ services:
         environment:
             TZ: "Asia/Tokyo"
         devices:
-            - /dev/pt3video0:/dev/pt3video0
-            - /dev/pt3video1:/dev/pt3video1
-            - /dev/pt3video2:/dev/pt3video2
-            - /dev/pt3video3:/dev/pt3video3
-            #- /dev/bus/usb/00x/00x # card reader
+            - /dev/bus/usb/001/005
+            - /dev/bus/usb/001/003
         #restart: always
 
     mysql:

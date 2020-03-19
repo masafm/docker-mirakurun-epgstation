@@ -1,21 +1,28 @@
 FROM node:12-buster-slim
 EXPOSE 40772
 ENV DOCKER="YES"
-ENV DEV="libpcsclite-dev build-essential curl libssl-dev yasm libtool autoconf pkg-config gcc git g++ make automake"
+ENV DEV="libpcsclite-dev libboost*-dev libglib2.0-dev libusb-dev build-essential curl libssl-dev yasm libtool autoconf pkg-config gcc git g++ make automake"
 
 RUN apt-get update && \
-    apt-get -y install pcscd libpcsclite1 libccid pcsc-tools && \
+    apt-get -y install pcscd libpcsclite1 libccid pcsc-tools libboost-*1.67.0 && \
     apt-get -y install $DEV && \
 \
 # recpt1
+#\
+#    git clone https://github.com/stz2012/recpt1 /tmp/recpt1 && \
+#    cd /tmp/recpt1/recpt1 && \
+#    ./autogen.sh && \
+#    ./configure && \
+#    make && \
+#    make install && \
 \
-    git clone https://github.com/stz2012/recpt1 /tmp/recpt1 && \
-    cd /tmp/recpt1/recpt1 && \
-    ./autogen.sh && \
-    ./configure && \
+# recfriio
+\
+    git clone https://github.com/masafm/recfriio.git /tmp/recfriio && \
+    cd /tmp/recfriio/recfriior5 && \
     make && \
     make install && \
-\
+    ln -s /usr/local/bin/recfriio /usr/local/bin/recpt1 && \
 # pm2
 \
     npm install pm2 -g && \
