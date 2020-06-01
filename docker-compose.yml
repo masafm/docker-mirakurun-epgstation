@@ -16,9 +16,8 @@ services:
             - ./mirakurun/db:/usr/local/var/db/mirakurun
         environment:
             TZ: "Asia/Tokyo"
-        devices:
-            - /dev/bus/usb/001/005
-            - /dev/bus/usb/001/003
+        #devices:
+        #    - /dev/bus/usb/001/003
         #restart: always
 
     mysql:

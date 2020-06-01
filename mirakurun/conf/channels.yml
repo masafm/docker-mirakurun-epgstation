@@ -2,6 +2,10 @@
   type: GR
   channel: '16'
 
+- name: KM
+  type: GR
+  channel: '18'
+
 - name: CX
   type: GR
   channel: '21'
