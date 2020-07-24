@@ -1,7 +1,10 @@
 version: '3.7'
 services:
     mirakurun:
-        image: chinachu/mirakurun
+        build:
+            context: mirakurun
+            args:
+                - CPUCORE=2
         cap_add:
             - SYS_ADMIN
             - SYS_NICE
@@ -13,9 +16,9 @@ services:
             - ./mirakurun/data:/app-data
         environment:
             TZ: "Asia/Tokyo"
-        devices:
-            - /dev/bus:/dev/bus
-            - /dev/dvb:/dev/dvb
+#        devices:
+#            - /dev/bus:/dev/bus
+#            - /dev/dvb:/dev/dvb
         restart: always
         logging:
             driver: json-file
