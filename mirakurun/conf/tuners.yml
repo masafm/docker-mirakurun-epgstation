@@ -1,10 +1,10 @@
 - name: hdp
   types:
     - GR
-  command: ssh tuner@raspberrypi -c aes128-gcm@openssh.com -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /usr/local/etc/mirakurun/id_rsa /home/tuner/bin/recfriio --b25 --hdp --lockfile /home/tuner/lock/hdp <channel> - -
+  command: ssh tuner@raspberrypi -c aes128-gcm@openssh.com -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /app-config/id_rsa /home/tuner/bin/recfriio --b25 --hdp --lockfile /home/tuner/lock/hdp <channel> - -
   isDisabled: false
 - name: hdus
   types:
     - GR
-  command: ssh tuner@raspberrypi -c aes128-gcm@openssh.com -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /usr/local/etc/mirakurun/id_rsa /home/tuner/bin/recfriio --b25 --hdus --lockfile /home/tuner/lock/hdus <channel> - -
+  command: ssh tuner@raspberrypi -c aes128-gcm@openssh.com -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i /app-config/id_rsa /home/tuner/bin/recfriio --b25 --hdus --lockfile /home/tuner/lock/hdus <channel> - -
   isDisabled: false
